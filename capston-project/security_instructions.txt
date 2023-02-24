@@ -1,0 +1,2 @@
+Admin or Doctor can view any Patient details.
+A patient can view self details(by ID) only.
