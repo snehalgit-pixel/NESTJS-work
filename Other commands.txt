@@ -1,0 +1,20 @@
+Create new nest project ---> nest new <project-name>
+
+yarn add class-validator
+yarn add class-transformer
+
+Install typeorm ---> npm i --save @nestjs/typeorm typeorm
+
+config ---> npm i @nestjs/config
+
+Create a module with one line command ---> nest g resource <module-name>
+
+Install postgres package ---> npm install pg --save
+
+Install bCrypt for password encryption ---> npm i bcrypt
+
+Install yarn nestjs passport ---> yarn add @nestjs/passport
+
+Install yarn nestjs jwt ---> yarn add @nestjs/jwt
+
+Install yarn passport-jwt ---> yarn add passport-jwt
