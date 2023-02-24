@@ -1,0 +1,37 @@
+Create a folder named 'db' at the global level of project
+Create a file named 'data-source.ts' inside db
+Type the following code:
+
+import { DataSource, DataSourceOptions } from "typeorm";
+
+export const typeOrmConfig: DataSourceOptions = {
+    type: 'postgres',
+    host: 'localhost',
+    port: 5432,
+    username: 'postgres',
+    password: 'Emids123',
+    database: 'store',
+    synchronize: true,
+    entities: [__dirname + 'dist/**/*.entity.{ts,js}'],
+    migrations: ['dist/db/migrations/*.js'],
+    logging: true
+};
+
+const dataSource = new DataSource(typeOrmConfig);
+
+export default dataSource;
+
+Check synchronize in typeOrm.config.ts file. It should be false
+
+Write down the following commands in the "scripts" block --->
+
+    "typeorm": "npm run build && npx typeorm -d dist/db/data-source.js",
+    "migration:generate": "npm run typeorm -- migration:generate",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
+
+For generating migrations:-- npm run migration:generate -- db/migration/NewMigration
+
+For execution of migrations:-- npm run migration:run
+
+Swagger: npm install --save @nestjs/swagger
